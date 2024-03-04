@@ -7,29 +7,19 @@ public class ThreeLoops {
 
     public static void main(String[] args) {
 
-        //Scanner number = new Scanner(System.in);
-
         System.out.println("Enter minimal value: ");
         int minimal = number.nextInt();
         System.out.println("Enter maximum value: ");
         int maximum = number.nextInt();
 
-        if (minimal > maximum);
-        {
-            int temp = minimal;
-            minimal = maximum;
-            maximum = temp;
-        }
-
-        if (minimal == maximum) {
-            System.out.printf("Minimal value must be lower");
-
+        if (minimal >= maximum) {
+            System.out.println("Error. Values must be different.");
             return;
         }
 
         System.out.println("Made by loop For: " + loopFor(minimal, maximum));
-        System.out.println("Made by loop While: " + loopFor(minimal, maximum));
-        System.out.println("Made by loop DoWhile: " + loopFor(minimal, maximum));
+        System.out.println("Made by loop While: " + loopWhile(minimal, maximum));
+        System.out.println("Made by loop DoWhile: " + loopDoWhile(minimal, maximum));
     }
 
     private static int loopFor(int minimal, int maximum) {
@@ -81,19 +71,8 @@ public class ThreeLoops {
             }
             i++;
         } while (i < maximum);
-        return result;
-    }
 
-    public static int nextInt() {
-        while (true) {
-            if (number.hasNextInt()) {
-                return number.nextInt();
-            }
-            System.out.println("Enter ");
-            number.nextInt();
-        }
+        return result;
+
     }
 }
-
-
-
