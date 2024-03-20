@@ -1,21 +1,24 @@
 package com.gmail.squizikbro;
+
 import java.util.Arrays;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Lottery {
     public static void main(String[] args) {
-        int[] ticket = generate();
+        int[] organizerTicket = generate();
         int[] userTicket = generate();
 
-        System.out.println("Ticket: " + Arrays.toString(ticket));
+        System.out.println("Organizer's Ticket: " + Arrays.toString(organizerTicket));
         System.out.println("User ticket: " + Arrays.toString(userTicket));
+        System.out.println("");
 
-        Arrays.sort(ticket);
+        Arrays.sort(organizerTicket);
         Arrays.sort(userTicket);
-        System.out.println("Ticket (after sort): " + Arrays.toString(ticket));
-        System.out.println("User ticket (after sort): " + Arrays.toString(userTicket));
+        System.out.println("Organizer's sorted ticket: " + Arrays.toString(organizerTicket));
+        System.out.println("User sorted ticket: " + Arrays.toString(userTicket));
+        System.out.println("");
 
-        System.out.println("Result: " + calculateResult(ticket, userTicket));
+        System.out.println("Coincidence: " + calculateResult(organizerTicket, userTicket));
     }
 
     public static int[] generate() {
@@ -36,5 +39,4 @@ public class Lottery {
 
         return result;
     }
-
 }
