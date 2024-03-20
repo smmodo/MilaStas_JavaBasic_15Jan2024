@@ -24,13 +24,13 @@ public class Person {
     }
 
     public String personInfo() {
-        return String.format("Call citizen " + name + surname + city + telNumber);
+        return String.format("Call citizen %s %s from %s at %s", name, surname, city, telNumber);
     }
 }
+
 class PersonInfo {
     public static void main(String[] args) {
         methodOne();
-//        methodTwo();
     }
 
     private static void methodOne() {
@@ -43,13 +43,4 @@ class PersonInfo {
         System.out.println(jackie.personInfo());
 
     }
-
-//    private static void methodTwo() {
-//        Person[] persons = {
-//                new Person("Will", "Smith", "New York", "2936729462846")};
-//        for (Person person : persons) {
-//            person.personInfo();
-//
-//        };
-//    }
 }
